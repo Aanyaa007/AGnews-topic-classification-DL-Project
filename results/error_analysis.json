@@ -1,0 +1,114 @@
+{
+  "models": [
+    "mlp",
+    "cnn"
+  ],
+  "n_test": 7600,
+  "per_model": {
+    "mlp": {
+      "errors": 653,
+      "top_confusions": {
+        "Business -> Sci/Tech": 159,
+        "Sci/Tech -> Business": 121,
+        "World -> Business": 76,
+        "World -> Sci/Tech": 60
+      },
+      "business_scitech_errors": 280
+    },
+    "cnn": {
+      "errors": 710,
+      "top_confusions": {
+        "Business -> Sci/Tech": 171,
+        "Sci/Tech -> Business": 149,
+        "World -> Business": 82,
+        "Business -> World": 64
+      },
+      "business_scitech_errors": 320
+    }
+  },
+  "all_correct_pct": 88.53947368421052,
+  "all_wrong_pct": 6.473684210526316,
+  "disagree_pct": 4.986842105263164,
+  "shared_error_examples": [
+    {
+      "true": "Sci/Tech",
+      "predicted": {
+        "mlp": "World",
+        "cnn": "World"
+      },
+      "text": "another homicide in holland it is a sad day in what seems to be another politically inspired homicide in holland dutch filmmaker and controversial columnist the"
+    },
+    {
+      "true": "Business",
+      "predicted": {
+        "mlp": "Sci/Tech",
+        "cnn": "Sci/Tech"
+      },
+      "text": "sony leads mgm acquisition entertainment companies had been vying for mgm to get their hands on its library of more than 4 000 titles time warner initially was "
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Sports",
+        "cnn": "Sports"
+      },
+      "text": "dodgers nip giants 3 2 in crucial series san francisco shawn green can sit out saturday knowing he was a huge help to the dodgers during their crucial series ag"
+    },
+    {
+      "true": "Sci/Tech",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business"
+      },
+      "text": "pharma groups work on epc issues sept 30 2004reacting to calls from pharmaceutical retailers distributors and manufacturers epcglobal has added a new action gro"
+    },
+    {
+      "true": "Sports",
+      "predicted": {
+        "mlp": "World",
+        "cnn": "Sci/Tech"
+      },
+      "text": "another controversial man utd arsenal game mount st helen 's in oregon has been active these last few months but that is nothing compared to the eruption at old"
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business"
+      },
+      "text": "calif oks world's toughest smog rules los angeles california air regulators friday unanimously approved the world's most stringent rules to reduce auto emission"
+    },
+    {
+      "true": "Sci/Tech",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business"
+      },
+      "text": "china's lenovo to buy ibm's pc business tokyo china's lenovo group ltd signed a definitive agreement on wednesday to acquire ibm corp 's personal computing divi"
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Sports",
+        "cnn": "Sports"
+      },
+      "text": "sports court hears hamm gold medal appeal lausanne switzerland paul hamm appeared before the sports world's highest court monday to argue why he should he keep "
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business"
+      },
+      "text": "mich elephant gets therapy for arthritis royal oak mich like any patient wanda needs positive reinforcement to wrestle through her physical therapy"
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Sports",
+        "cnn": "Sports"
+      },
+      "text": "australia 362 7 v india third test close reuters reuters australia were 362 for seven wickets at the close of play on the first day of their third cricket test "
+    }
+  ]
+}
