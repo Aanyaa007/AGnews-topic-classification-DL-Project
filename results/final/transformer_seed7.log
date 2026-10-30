@@ -1,0 +1,89 @@
+{"epoch": 1, "train_loss": 0.7819525136771025, "train_acc": 0.6762222222222222, "val_loss": 0.4723026892344157, "val_acc": 0.8386666666666667, "epoch_sec": 496.1523015499115}
+{"epoch": 2, "train_loss": 0.4105404841458356, "train_acc": 0.8578796296296296, "val_loss": 0.3536750456492106, "val_acc": 0.8798333333333334, "epoch_sec": 504.30711364746094}
+{"epoch": 3, "train_loss": 0.3350984530095701, "train_acc": 0.8851111111111111, "val_loss": 0.30483579635620117, "val_acc": 0.8955, "epoch_sec": 542.8911402225494}
+{"epoch": 4, "train_loss": 0.29776876406316405, "train_acc": 0.8984907407407408, "val_loss": 0.30138173421223957, "val_acc": 0.90125, "epoch_sec": 549.0368041992188}
+{"epoch": 5, "train_loss": 0.2759231611711008, "train_acc": 0.9053333333333333, "val_loss": 0.28293048095703127, "val_acc": 0.90825, "epoch_sec": 526.9445703029633}
+{
+  "model": "transformer",
+  "tag": "transformer_seed7",
+  "params": 4105476,
+  "model_hp": {
+    "num_layers": 2,
+    "nhead": 4,
+    "dropout": 0.1
+  },
+  "epochs_run": 5,
+  "best_epoch": 5,
+  "best_val_acc": 0.90825,
+  "train_sec": 2619.3483262062073,
+  "hyperparams": {
+    "model": "transformer",
+    "hp": "{\"num_layers\": 2, \"nhead\": 4, \"dropout\": 0.1}",
+    "tag": "transformer_seed7",
+    "data": "processed",
+    "out": "results/final",
+    "epochs": 5,
+    "patience": 2,
+    "bs": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "warmup": 500,
+    "clip": 1.0,
+    "seed": 7,
+    "no_test": false
+  },
+  "test_acc": 0.904342105263158,
+  "test_loss": 0.28937692943372223,
+  "macro_precision": 0.9047075079418786,
+  "macro_recall": 0.904342105263158,
+  "macro_f1": 0.9041769533596504,
+  "per_class": {
+    "World": {
+      "precision": 0.9386845039018952,
+      "recall": 0.8863157894736842,
+      "f1": 0.9117487818083378
+    },
+    "Sports": {
+      "precision": 0.9391789153573239,
+      "recall": 0.9752631578947368,
+      "f1": 0.9568809708236509
+    },
+    "Business": {
+      "precision": 0.8764044943820225,
+      "recall": 0.8621052631578947,
+      "f1": 0.8691960732289732
+    },
+    "Sci/Tech": {
+      "precision": 0.8645621181262729,
+      "recall": 0.8936842105263157,
+      "f1": 0.8788819875776398
+    }
+  },
+  "confusion_matrix": [
+    [
+      1684,
+      66,
+      94,
+      56
+    ],
+    [
+      15,
+      1853,
+      18,
+      14
+    ],
+    [
+      44,
+      22,
+      1638,
+      196
+    ],
+    [
+      51,
+      32,
+      119,
+      1698
+    ]
+  ],
+  "test_infer_sec": 6.634434938430786
+}
