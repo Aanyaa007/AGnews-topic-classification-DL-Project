@@ -1,0 +1,24 @@
+{
+  "_note": "Equal tuning budget: 3 configurations per model, max 5 epochs, early stopping (patience 2) on validation accuracy. Selection uses validation accuracy only.",
+  "mlp": [
+    {"name": "A", "hp": {"emb_dim": 128, "hidden": 256, "dropout": 0.5}, "lr": 1e-3},
+    {"name": "B", "hp": {"emb_dim": 256, "hidden": 512, "dropout": 0.5}, "lr": 1e-3},
+    {"name": "C", "hp": {"emb_dim": 128, "hidden": 256, "dropout": 0.5}, "lr": 5e-4}
+  ],
+  "cnn": [
+    {"name": "A", "hp": {"n_filters": 100, "dropout": 0.5}, "lr": 1e-3},
+    {"name": "B", "hp": {"n_filters": 200, "dropout": 0.5}, "lr": 1e-3},
+    {"name": "C", "hp": {"n_filters": 100, "dropout": 0.5}, "lr": 5e-4}
+  ],
+  "bilstm": [
+    {"name": "A", "hp": {"hidden": 128, "dropout": 0.5}, "lr": 1e-3},
+    {"name": "B", "hp": {"hidden": 128, "dropout": 0.3}, "lr": 1e-3},
+    {"name": "C", "hp": {"hidden": 128, "dropout": 0.5}, "lr": 5e-4}
+  ],
+  "transformer": [
+    {"name": "A", "hp": {"num_layers": 2, "nhead": 4, "dropout": 0.1}, "lr": 1e-3, "warmup": 500},
+    {"name": "B", "hp": {"num_layers": 2, "nhead": 4, "dropout": 0.1}, "lr": 5e-4, "warmup": 500},
+    {"name": "C", "hp": {"num_layers": 2, "nhead": 4, "dropout": 0.3}, "lr": 5e-4, "warmup": 500}
+  ],
+  "final_seeds": [42, 13, 7]
+}
