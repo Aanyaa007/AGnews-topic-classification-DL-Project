@@ -1,0 +1,88 @@
+{"epoch": 1, "train_loss": 0.6325300392309825, "train_acc": 0.7583425925925926, "val_loss": 0.33567593574523924, "val_acc": 0.88825, "epoch_sec": 220.19416856765747}
+{"epoch": 2, "train_loss": 0.3465073628558053, "train_acc": 0.8832777777777778, "val_loss": 0.2901792904535929, "val_acc": 0.903, "epoch_sec": 234.4997615814209}
+{"epoch": 3, "train_loss": 0.26996797931194305, "train_acc": 0.9091574074074074, "val_loss": 0.2742056016921997, "val_acc": 0.9133333333333333, "epoch_sec": 224.94995141029358}
+{"epoch": 4, "train_loss": 0.220042610945525, "train_acc": 0.9259444444444445, "val_loss": 0.2783156407674154, "val_acc": 0.9149166666666667, "epoch_sec": 242.20778703689575}
+{"epoch": 5, "train_loss": 0.1827140809165107, "train_acc": 0.93925, "val_loss": 0.2957381731669108, "val_acc": 0.91175, "epoch_sec": 222.39363431930542}
+{
+  "model": "cnn",
+  "tag": "cnn_seed13",
+  "params": 4150204,
+  "model_hp": {
+    "n_filters": 200,
+    "dropout": 0.5
+  },
+  "epochs_run": 5,
+  "best_epoch": 4,
+  "best_val_acc": 0.9149166666666667,
+  "train_sec": 1144.2598414421082,
+  "hyperparams": {
+    "model": "cnn",
+    "hp": "{\"n_filters\": 200, \"dropout\": 0.5}",
+    "tag": "cnn_seed13",
+    "data": "processed",
+    "out": "results/final",
+    "epochs": 5,
+    "patience": 2,
+    "bs": 128,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "warmup": 0,
+    "clip": 1.0,
+    "seed": 13,
+    "no_test": false
+  },
+  "test_acc": 0.9089473684210526,
+  "test_loss": 0.2891019138536955,
+  "macro_precision": 0.9084822722668241,
+  "macro_recall": 0.9089473684210526,
+  "macro_f1": 0.9085139331393938,
+  "per_class": {
+    "World": {
+      "precision": 0.9105907397551889,
+      "recall": 0.9005263157894737,
+      "f1": 0.9055305636411749
+    },
+    "Sports": {
+      "precision": 0.9434914228052472,
+      "recall": 0.9842105263157894,
+      "f1": 0.9634209170530654
+    },
+    "Business": {
+      "precision": 0.8949096880131363,
+      "recall": 0.8605263157894737,
+      "f1": 0.8773812718003756
+    },
+    "Sci/Tech": {
+      "precision": 0.8849372384937239,
+      "recall": 0.8905263157894737,
+      "f1": 0.887722980062959
+    }
+  },
+  "confusion_matrix": [
+    [
+      1711,
+      66,
+      74,
+      49
+    ],
+    [
+      21,
+      1870,
+      4,
+      5
+    ],
+    [
+      78,
+      21,
+      1635,
+      166
+    ],
+    [
+      69,
+      25,
+      114,
+      1692
+    ]
+  ],
+  "test_infer_sec": 6.550492525100708
+}
