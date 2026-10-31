@@ -1,0 +1,164 @@
+{
+  "models": [
+    "mlp",
+    "cnn",
+    "bilstm",
+    "transformer"
+  ],
+  "n_test": 7600,
+  "per_model": {
+    "mlp": {
+      "errors": 678,
+      "top_confusions": {
+        "Business -> Sci/Tech": 162,
+        "Sci/Tech -> Business": 144,
+        "World -> Business": 92,
+        "World -> Sci/Tech": 54
+      },
+      "business_scitech_errors": 306
+    },
+    "cnn": {
+      "errors": 704,
+      "top_confusions": {
+        "Sci/Tech -> Business": 171,
+        "Business -> Sci/Tech": 150,
+        "World -> Business": 104,
+        "World -> Sports": 56
+      },
+      "business_scitech_errors": 321
+    },
+    "bilstm": {
+      "errors": 638,
+      "top_confusions": {
+        "Business -> Sci/Tech": 151,
+        "Sci/Tech -> Business": 130,
+        "World -> Business": 77,
+        "World -> Sports": 65
+      },
+      "business_scitech_errors": 281
+    },
+    "transformer": {
+      "errors": 752,
+      "top_confusions": {
+        "Business -> Sci/Tech": 202,
+        "Sci/Tech -> Business": 115,
+        "World -> Sci/Tech": 99,
+        "World -> Business": 90
+      },
+      "business_scitech_errors": 317
+    }
+  },
+  "all_correct_pct": 85.27631578947368,
+  "all_wrong_pct": 4.855263157894737,
+  "disagree_pct": 9.868421052631579,
+  "n_models_correct_histogram": {
+    "0": 369,
+    "1": 175,
+    "2": 196,
+    "3": 379,
+    "4": 6481
+  },
+  "oracle_acc_pct": 95.14473684210526,
+  "shared_error_examples": [
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Sci/Tech",
+        "cnn": "Sci/Tech",
+        "bilstm": "Sci/Tech",
+        "transformer": "Sci/Tech"
+      },
+      "text": "swedes beam poetry into outer space reuters reuters swedish poets have broadcast their work into outer space by radio to give alien life forms if they exist a t"
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Sports",
+        "cnn": "Sports",
+        "bilstm": "Sports",
+        "transformer": "Sports"
+      },
+      "text": "dodgers nip giants 3 2 in crucial series san francisco shawn green can sit out saturday knowing he was a huge help to the dodgers during their crucial series ag"
+    },
+    {
+      "true": "Sci/Tech",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business",
+        "bilstm": "Business",
+        "transformer": "Business"
+      },
+      "text": "avis blames it for multimillion dollar loss the car rental company takes a major hit because of problems with it including high costs associated with an erp pro"
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business",
+        "bilstm": "Business",
+        "transformer": "Business"
+      },
+      "text": "danish group 's gift criticized a danish group has caused controversy in colombia by publicly donating money to the country 's largest marxist guerrilla organiz"
+    },
+    {
+      "true": "Business",
+      "predicted": {
+        "mlp": "Sci/Tech",
+        "cnn": "Sci/Tech",
+        "bilstm": "Sci/Tech",
+        "transformer": "Sci/Tech"
+      },
+      "text": "aol pushes into internet shopping looking for new ways to boost its revenue america online is launching an online shopping service that won 't require an aol ac"
+    },
+    {
+      "true": "Business",
+      "predicted": {
+        "mlp": "Sci/Tech",
+        "cnn": "Sci/Tech",
+        "bilstm": "Sci/Tech",
+        "transformer": "Sci/Tech"
+      },
+      "text": "hasbro's no conehead its saturday night live version of trivial pursuit is good strategy for staying ahead of age compression"
+    },
+    {
+      "true": "Sci/Tech",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business",
+        "bilstm": "Business",
+        "transformer": "Business"
+      },
+      "text": "regulators let cingular buy at t wireless the 41 billion merger between cingular wireless llc and at t wireless services inc won approval from the federal commu"
+    },
+    {
+      "true": "Business",
+      "predicted": {
+        "mlp": "World",
+        "cnn": "World",
+        "bilstm": "World",
+        "transformer": "World"
+      },
+      "text": "eu increases pressure for rights in myanmar eu foreign ministers agreed monday to tighten sanctions against myanmar if it does not improve its human rights reco"
+    },
+    {
+      "true": "Business",
+      "predicted": {
+        "mlp": "Sci/Tech",
+        "cnn": "Sci/Tech",
+        "bilstm": "Sci/Tech",
+        "transformer": "Sci/Tech"
+      },
+      "text": "easymobile launch set for march denmark 's leading telecoms operator tdc says it will launch a low budget mobile telephone operator dubbed easymobile with mobil"
+    },
+    {
+      "true": "World",
+      "predicted": {
+        "mlp": "Business",
+        "cnn": "Business",
+        "bilstm": "Business",
+        "transformer": "Business"
+      },
+      "text": "google lowers its ipo price range san jose calif in a sign that google inc 's initial public offering isn't as popular as expected the company lowered its estim"
+    }
+  ]
+}

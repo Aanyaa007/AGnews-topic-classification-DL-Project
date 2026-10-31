@@ -1,0 +1,14 @@
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model cnn --hp {"n_filters": 100, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag cnn_A
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model cnn --hp {"n_filters": 200, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag cnn_B
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model cnn --hp {"n_filters": 100, "dropout": 0.5} --lr 0.0005 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag cnn_C
+cnn {'A': 0.9134166666666667, 'B': 0.9145833333333333, 'C': 0.9095} -> B
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model cnn --hp {"n_filters": 200, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/final --tag cnn_seed42
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model cnn --hp {"n_filters": 200, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 13 --out results/final --tag cnn_seed13
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model cnn --hp {"n_filters": 200, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 7 --out results/final --tag cnn_seed7
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model transformer --hp {"num_layers": 2, "nhead": 4, "dropout": 0.1} --lr 0.001 --warmup 500 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag transformer_A
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model transformer --hp {"num_layers": 2, "nhead": 4, "dropout": 0.1} --lr 0.0005 --warmup 500 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag transformer_B
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model transformer --hp {"num_layers": 2, "nhead": 4, "dropout": 0.3} --lr 0.0005 --warmup 500 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag transformer_C
+transformer {'A': 0.9069166666666667, 'B': 0.9028333333333334, 'C': 0.89325} -> A
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model transformer --hp {"num_layers": 2, "nhead": 4, "dropout": 0.1} --lr 0.001 --warmup 500 --epochs 5 --patience 2 --seed 42 --out results/final --tag transformer_seed42
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model transformer --hp {"num_layers": 2, "nhead": 4, "dropout": 0.1} --lr 0.001 --warmup 500 --epochs 5 --patience 2 --seed 13 --out results/final --tag transformer_seed13
+skip transformer_seed7 (done)

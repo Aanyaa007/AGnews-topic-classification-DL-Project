@@ -5,7 +5,9 @@ Reads the saved test predictions of every trained model and reports:
   - how many test samples the models get right / wrong together
   - example texts that every model misclassifies
 
-Run (after training):  python src/error_analysis.py
+Uses the seed-42 final run of each model (results/final/<model>_seed42_test_preds.npy).
+
+Run (after run_experiments.py):  python src/error_analysis.py
 """
 import json
 import os
@@ -16,11 +18,11 @@ import pandas as pd
 from text_utils import CLASSES
 
 
-def main(data="processed", out="results", models=("mlp", "cnn", "bilstm", "transformer")):
+def main(data="processed", out="results/final", models=("mlp", "cnn", "bilstm", "transformer")):
     test = pd.read_csv(os.path.join(data, "test_clean.csv"))
     y = test["label"].to_numpy()
-    preds = {m: np.load(os.path.join(out, f"{m}_test_preds.npy"))
-             for m in models if os.path.exists(os.path.join(out, f"{m}_test_preds.npy"))}
+    preds = {m: np.load(os.path.join(out, f"{m}_seed42_test_preds.npy"))
+             for m in models if os.path.exists(os.path.join(out, f"{m}_seed42_test_preds.npy"))}
     report = {"models": list(preds), "n_test": int(len(y)), "per_model": {}}
 
     for m, p in preds.items():
@@ -39,6 +41,12 @@ def main(data="processed", out="results", models=("mlp", "cnn", "bilstm", "trans
     report["all_correct_pct"] = float(correct.all(0).mean() * 100)
     report["all_wrong_pct"] = float((~correct).all(0).mean() * 100)
     report["disagree_pct"] = 100 - report["all_correct_pct"] - report["all_wrong_pct"]
+
+    # how many models get each sample right (0..n_models)
+    n_right = correct.sum(0)
+    report["n_models_correct_histogram"] = {int(k): int((n_right == k).sum()) for k in range(len(preds) + 1)}
+    # oracle: a sample counts as solved if any model is right
+    report["oracle_acc_pct"] = float(correct.any(0).mean() * 100)
 
     shared = test[(~correct).all(0)].sample(10, random_state=1)
     report["shared_error_examples"] = [

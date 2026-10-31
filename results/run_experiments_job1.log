@@ -1,0 +1,14 @@
+skip mlp_A (done)
+skip mlp_B (done)
+skip mlp_C (done)
+mlp {'A': 0.9181666666666667, 'B': 0.9189166666666667, 'C': 0.913} -> B
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model mlp --hp {"emb_dim": 256, "hidden": 512, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/final --tag mlp_seed42
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model mlp --hp {"emb_dim": 256, "hidden": 512, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 13 --out results/final --tag mlp_seed13
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model mlp --hp {"emb_dim": 256, "hidden": 512, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 7 --out results/final --tag mlp_seed7
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model bilstm --hp {"hidden": 128, "dropout": 0.5} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag bilstm_A
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model bilstm --hp {"hidden": 128, "dropout": 0.3} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag bilstm_B
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model bilstm --hp {"hidden": 128, "dropout": 0.5} --lr 0.0005 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/tuning --tag bilstm_C
+bilstm {'A': 0.9158333333333334, 'B': 0.9190833333333334, 'C': 0.9028333333333334} -> B
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model bilstm --hp {"hidden": 128, "dropout": 0.3} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 42 --out results/final --tag bilstm_seed42
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model bilstm --hp {"hidden": 128, "dropout": 0.3} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 13 --out results/final --tag bilstm_seed13
+RUN /usr/bin/python /home/claude/repo/agnews-topic-classification/src/train.py --model bilstm --hp {"hidden": 128, "dropout": 0.3} --lr 0.001 --warmup 0 --epochs 5 --patience 2 --seed 7 --out results/final --tag bilstm_seed7
