@@ -1,0 +1,56 @@
+[
+  {
+    "model_a": "mlp",
+    "model_b": "cnn",
+    "a_right_b_wrong": 221,
+    "a_wrong_b_right": 195,
+    "chi2": 1.502,
+    "p_value": 0.22030186108904656,
+    "significant_0.05": false
+  },
+  {
+    "model_a": "mlp",
+    "model_b": "bilstm",
+    "a_right_b_wrong": 163,
+    "a_wrong_b_right": 203,
+    "chi2": 4.156,
+    "p_value": 0.04149369542702372,
+    "significant_0.05": true
+  },
+  {
+    "model_a": "mlp",
+    "model_b": "transformer",
+    "a_right_b_wrong": 274,
+    "a_wrong_b_right": 200,
+    "chi2": 11.243,
+    "p_value": 0.0007994040362643819,
+    "significant_0.05": true
+  },
+  {
+    "model_a": "cnn",
+    "model_b": "bilstm",
+    "a_right_b_wrong": 131,
+    "a_wrong_b_right": 197,
+    "chi2": 12.881,
+    "p_value": 0.00033191752595810654,
+    "significant_0.05": true
+  },
+  {
+    "model_a": "cnn",
+    "model_b": "transformer",
+    "a_right_b_wrong": 251,
+    "a_wrong_b_right": 203,
+    "chi2": 4.866,
+    "p_value": 0.027396654682950397,
+    "significant_0.05": true
+  },
+  {
+    "model_a": "bilstm",
+    "model_b": "transformer",
+    "a_right_b_wrong": 261,
+    "a_wrong_b_right": 147,
+    "chi2": 31.297,
+    "p_value": 2.2147073620743387e-08,
+    "significant_0.05": true
+  }
+]
